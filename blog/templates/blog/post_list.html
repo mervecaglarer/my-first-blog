@@ -6,16 +6,15 @@
         <div>
             <h1><a href="/">Merve's Blog</a></h1>
         </div>
-        <div>
-            <p>published: 15.07.2020, 17:00</p>
-            <h2><a href="">My First Blog</a></h2>
-            <p>So Exciting! </p>
-        </div>
 
-        <div>
-            <p>published: 15.07.2020, 17:17</p>
-            <h2><a href="">This is my second submit!</a></h2>
-            <p>My first django experience ...</p>
-        </div>
+        {% for post in posts %}
+        
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }} </p>
+            </div>
+
+        {% endfor %}
     </body>
 </html>
